@@ -1,37 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import ProductCounter from "./ProductCounter";
 
 const App = () => {
+  const [orangeCounter, setOrangeCounter] = useState(0);
+  const [appleCount, setAppleCount] = useState(0);
   return (
     <div className="App">
       <ProductCounter
-        product={{
-          productName: "Апельсин",
-          count: 6,
-        }}
+        productName="Апельсин"
+        count={orangeCounter}
+        setCount={setOrangeCounter}
       />
       <ProductCounter
-        product={{
-          productName: "Яблоко",
-        }}
+        productName="Яблоко"
+        count={appleCount}
+        setCount={setAppleCount}
       />
       <ProductCounter
-        product={{
-          productName: "Ананас",
-          count: 3,
-        }}
-      />
-      <ProductCounter
-        product={{
-          productName: "Арбуз",
-          count: 46,
-        }}
-      />
-      <ProductCounter
-        product={{
-          productName: "Дыня",
-        }}
+        productName="Апельсин"
+        count={orangeCounter}
+        setCount={setOrangeCounter}
       />
     </div>
   );
