@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Input from "./Input/input";
+import Input from "../../common/Input/input";
 
-const Form: React.FC = () => {
+const RegistrationForm: React.FC = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -75,4 +75,4 @@ const Form: React.FC = () => {
     </div>
   );
 };
-export default Form;
+export default RegistrationForm;
