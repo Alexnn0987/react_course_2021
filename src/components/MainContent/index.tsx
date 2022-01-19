@@ -3,6 +3,9 @@ import React, { useEffect } from "react";
 const MainContent = () => {
   useEffect(() => {
     console.log("main content mount");
+    return () => {
+      console.log("main content unmount!!");
+    };
   }, []);
   return (
     <div>
