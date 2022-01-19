@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const MainContent = () => {
+  useEffect(() => {
+    console.log("main content mount");
+  }, []);
   return (
     <div>
       <h1>Main Page Content </h1>
