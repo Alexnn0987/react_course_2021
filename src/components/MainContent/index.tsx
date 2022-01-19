@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 
 const MainContent = () => {
+  const handler = () => {
+    console.log("click");
+  };
   useEffect(() => {
     console.log("main content mount");
+    document.body.addEventListener("click", handler);
     return () => {
       console.log("main content unmount!!");
+      document.body.removeEventListener("click", handler);
     };
   }, []);
   return (
