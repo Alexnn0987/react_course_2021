@@ -4,6 +4,7 @@ import PageWrapper from "../../components/common/PageWrapper";
 
 const MainPage: React.FC = () => {
   const [contentVisibility, setContentVisibility] = useState(false); // useState создается один раз. Один раз проинициализируется на этапе инициализации, он так и останется пока компонент не удалим из DOM.
+  const [wasOpen, setWasOpen] = useState(false);
   // const [stateSecond, setStateSecond] = useState(0);
   // console.log("main page container"); // седующий код одинаковые,т.к. не имеют ни каких зависимостей.При обновлениии компонента, вызывает заново.
 
@@ -17,8 +18,9 @@ const MainPage: React.FC = () => {
 
   return (
     <PageWrapper>
-      {contentVisibility && <MainContent />}
+      {contentVisibility && <MainContent setWasOpen={setWasOpen} />}
       <button
+        disabled={!contentVisibility && wasOpen}
         type="button"
         onClick={() => setContentVisibility((prev) => !prev)}>
         {contentVisibility ? "Скрыть текст" : "Показать текст"}

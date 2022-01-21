@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 
-const MainContent = () => {
+type MainContentPropType = {
+  setWasOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const MainContent: React.FC<MainContentPropType> = (props) => {
+  const { setWasOpen } = props;
   const handler = () => {
     console.log("click");
   };
   useEffect(() => {
     console.log("main content mount");
     document.body.addEventListener("click", handler);
+    setWasOpen(true);
     return () => {
       console.log("main content unmount!!");
       document.body.removeEventListener("click", handler);
